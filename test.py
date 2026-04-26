@@ -54,7 +54,7 @@ def delete_item():
 
 st.title("Smart Budget Tracker")
 
-menu = st.sidebar.selectbox("Menu", ["Add Item", "View Items", "Total Spent", "View Specific Category"])
+menu = st.sidebar.selectbox("Menu", ["Add Item", "View Items", "Total Spent", "View Specific Category", "Delete Item"])
 
 if menu == "Add Item":
     add_item()
@@ -64,4 +64,6 @@ elif menu == "Total Spent":
     total_spent()
 elif menu == "View Specific Category":
     view_specific_category()
+elif menu == "Delete Item":
+    delete_item()
 
