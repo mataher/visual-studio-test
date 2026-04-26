@@ -42,6 +42,15 @@ def view_specific_category():
                 found = True
         if not found:
             st.error(f"No items found in category: {category}")
+def delete_item():
+    item_id = st.number_input("Enter the ID of the item to delete:", min_value=1, step=1)
+    if st.button("Delete Item"):
+        for item in st.session_state.smart_budget:
+            if item["id"] == item_id:
+                st.session_state.smart_budget.remove(item)
+                st.success(f"Item with ID {item_id} deleted successfully!")
+                return
+        st.error(f"No item found with ID: {item_id}")  
 
 st.title("Smart Budget Tracker")
 
